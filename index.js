@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { startHealthCheckTimer, receiveHealthCheck } = require('health');
+const { startHealthCheckTimer, receiveHealthCheck } = require('./health');
 
 app.use(cors());
 app.use(express.json());
