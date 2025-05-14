@@ -2,11 +2,13 @@ const axios = require('axios');
 require('dotenv').config();
 
 const PARTNER_URL = `${process.env.PARTNER}`;
+const PARTNER_URL1 = `${process.env.PARTNER1}`;
 
 // Function to send health check request
 const sendHealthCheck = async () => {
   try {
     const response = await axios.get(`${PARTNER_URL}/on`);
+    await axios.get(`${PARTNER_URL1}/`);
     console.log('Health check sent to partner server:', response.data);
   } catch (error) {
     console.error('Failed to send health check:', error.message);
